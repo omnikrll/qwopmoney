@@ -3,14 +3,23 @@
 		<title>o shit waddup</title>
 	</head>
 	<body>
-	<script src="/socket.io/socket.io.js"></script>
-	<script>
-	  var socket = io.connect('http://localhost');
-	  socket.on('news', function (data) {
-	    console.log(data);
-	    socket.emit('my other event', { my: 'data' });
-	  });
-	</script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		var socket = io.connect('http://localhost:3000');
 
+		var storage = {};
+
+		socket.on('news', function (data) {
+			console.log(data);
+			socket.emit('my other event', { my: 'data' });
+		});
+		socket.on('lol', function (data) {
+			var key = Date.now();
+
+			storage[key] = data;
+
+			console.log(storage);
+		});
+		</script>
 	</body>
 </html>

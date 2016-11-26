@@ -1,14 +1,30 @@
 // init express
-var express = require("express").createServer();
-var app = express();
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+var chokidar = require('chokidar');
 
-app.get('/', function(req, res) {
-	res.send('ayy lmao');
+server.listen(3000);
+
+var watcher = chokidar.watch('example.txt', {
+	ignored: /[\/\\]\./,
+	persistent: true
 });
 
-app.listen(3000, function() {
-	console.log('port 3000 lol');
+app.get('/', function (req, res) {
+	res.sendfile(__dirname + '/index.html');
 });
 
-//init socket.io
-var io = require("socket.io")(app);
+io.on('connection', function (socket) {
+	socket.emit('news', { hello: 'world' });
+	socket.on('my other event', function (data) {
+	console.log(data);
+	});
+
+	watcher.on('change', function() {
+		console.log('ya did the thing');
+		socket.emit('lol', {
+			ayy: 'lmao'
+		});
+	});
+});
