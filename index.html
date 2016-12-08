@@ -1,13 +1,101 @@
 <html>
 	<head>
 		<title>o shit waddup</title>
+		<link rel="stylesheet" href="/assets/reset.min.css"/>
 	</head>
 	<body>
 		<script src="/socket.io/socket.io.js"></script>
+		<script src="/assets/phaser.js"></script>
+
+		<div id="game"></div>
+
 		<script>
 		var socket = io.connect('http://localhost:3000');
-
 		var storage = {};
+
+		var qwops;
+		var text;
+		var amount;
+		var blinker;
+		var blinks;
+		var airhorn;
+
+		var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'game', { preload: preload, create: create, update: update});
+
+		function preload() {
+			game.load.image('qwop', '/assets/qwop.png');
+			game.load.audio('airhorn', '/assets/airhorn.mp3');
+		}
+
+		function create() {
+			game.stage.backgroundColor = '#19bde5';
+
+			game.physics.startSystem(Phaser.Physics.ARCADE);
+
+			airhorn = game.add.audio('airhorn');
+
+			qwops = game.add.group();
+
+			text = game.add.text(
+				0,
+				0,
+				'$',
+				{
+					font: '256px Comic\ Sans',
+					fill: '#fdf75a',
+					align: 'center',
+					boundsAlignH: 'center',
+					boundsAlignV: 'middle'
+				}
+			);
+
+			text.setShadow(6, 6, '#ff00ff', 6);
+			text.setTextBounds(0, 0, game.world.width, game.world.height);
+
+			text.alpha = 0;
+
+			makeItRain();
+		}
+
+		function update() {
+			game.physics.arcade.collide(qwops);
+		}
+
+		function makeItRain() {
+			if (typeof amount !== 'number') amount = 20;
+
+			var inc = game.world.width / amount;
+
+			var _amount = Math.round(amount);
+
+			for (var i = 0; i < _amount; i++) {
+				var qwop = qwops.create(inc * i, 0, 'qwop');
+				game.physics.enable(qwop);
+				qwop.body.setCircle(30);
+				qwop.body.collideWorldBounds = true;
+				qwop.body.bounce.y = game.rnd.integerInRange(3, 6) / 10;
+				qwop.body.gravity.y = game.rnd.integerInRange(200, 400);
+				qwop.body.velocity.set(game.rnd.integerInRange(-200, 200), game.rnd.integerInRange(-200, 200));
+			}
+
+			text.setText('$' + amount.toFixed(2));
+			blinks = 10;
+			blinker = game.time.events.loop(Phaser.Timer.QUARTER, blinkText, this);
+
+			airhorn.play();
+		}
+
+		function blinkText() {
+			var _alpha = text.alpha == 0 ? 1 : 0;
+
+			text.alpha = _alpha;
+
+			blinks--;
+
+			if (blinks == 0) {
+				game.time.events.remove(blinker);
+			}
+		}
 
 		socket.on('news', function (data) {
 			console.log(data);
@@ -19,7 +107,11 @@
 			storage[key] = data;
 
 			console.log(storage);
+
+			amount = data.ammount / 100;
+			makeItRain();
 		});
+
 		</script>
 	</body>
 </html>

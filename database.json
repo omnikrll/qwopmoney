@@ -1,0 +1,211 @@
+{
+    "accounts": [{
+        "@advancedType": "UserAccount",
+        "username": "DR. CLEMENT SHIMIZU",
+        "id": 10000,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 100,
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 100,
+            "dateTime": "1481136936"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "STEVEN LAMBERT",
+        "id": 10001,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 600,
+            "dateTime": "1479908781"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "RYAN SLAUSON",
+        "id": 10002,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 1000,
+            "dateTime": "1479889832"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "AMY HERMAN",
+        "id": 10003,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 1000,
+            "dateTime": "1479910321"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "RAMIN RAHNI",
+        "id": 10004,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 1000,
+            "dateTime": "1480317447"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "KAHO ABE",
+        "id": 10005,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 1100,
+            "dateTime": "1480512033"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "DAVID JACKSON",
+        "id": 10006,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 2000,
+            "dateTime": "1479911209"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "RONNY NUNEZ",
+        "id": 10007,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 2000,
+            "dateTime": "1480176607"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "BRANDON ZANGARA",
+        "id": 10008,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 2100,
+            "dateTime": "1479890012"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "NICOLE MAUS",
+        "id": 10009,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 2500,
+            "dateTime": "1479906638"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "SWAN PAIK",
+        "id": 10010,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 3100,
+            "dateTime": "1480326627"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "ALEXANDRA MOLOTKOW",
+        "id": 10011,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 5000,
+            "dateTime": "1479909578"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "FLOW CONSTRUCT, LLC",
+        "id": 10012,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 5000,
+            "dateTime": "1479979758"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "POLYTRON CORPORATION",
+        "id": 10013,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 10000,
+            "dateTime": "1479887625"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "SARAH RANDOLPH",
+        "id": 10014,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 10000,
+            "dateTime": "1479890395"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "JENN DE LA VEGA",
+        "id": 10015,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 10000,
+            "dateTime": "1480404716"
+        }]
+    }, {
+        "@advancedType": "UserAccount",
+        "username": "ZACH GAGE",
+        "id": 10016,
+        "transactions": [{
+            "@advancedType": "Transaction_AccountCreate",
+            "dateTime": "1481136897"
+        }, {
+            "@advancedType": "Transaction_Deposit",
+            "ammount": 500000,
+            "dateTime": "1479317516"
+        }]
+    }]
+}
