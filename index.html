@@ -19,8 +19,9 @@
 		var blinker;
 		var blinks;
 		var airhorn;
+		var spacebar;
 
-		var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'game', { preload: preload, create: create, update: update});
+		var game = new Phaser.Game(window.screen.width * 2, window.screen.height * 2, Phaser.AUTO, 'game', { preload: preload, create: create, update: update});
 
 		function preload() {
 			game.load.image('qwop', '/assets/qwop.png');
@@ -29,6 +30,7 @@
 
 		function create() {
 			game.stage.backgroundColor = '#19bde5';
+			game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 
 			game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -53,8 +55,18 @@
 			text.setTextBounds(0, 0, game.world.width, game.world.height);
 
 			text.alpha = 0;
+			spacebar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+			spacebar.onDown.add(goFullScreen, this);
 
 			makeItRain();
+		}
+
+		function goFullScreen() {
+	    if (game.scale.isFullScreen) {
+        game.scale.stopFullScreen();
+	    } else {
+        game.scale.startFullScreen(false);
+	    }
 		}
 
 		function update() {
