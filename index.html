@@ -83,11 +83,11 @@
 			for (var i = 0; i < _amount; i++) {
 				var qwop = qwops.create(inc * i, 0, 'qwop');
 				game.physics.enable(qwop);
-				qwop.body.setCircle(30);
+				qwop.body.setCircle(25);
 				qwop.body.collideWorldBounds = true;
-				qwop.body.bounce.y = game.rnd.integerInRange(3, 6) / 10;
-				qwop.body.gravity.y = game.rnd.integerInRange(200, 400);
-				qwop.body.velocity.set(game.rnd.integerInRange(-200, 200), game.rnd.integerInRange(-200, 200));
+				qwop.body.bounce.y = game.rnd.integerInRange(2, 5) / 10;
+				qwop.body.gravity.y = game.rnd.integerInRange(200, 300);
+				qwop.body.velocity.x = game.rnd.integerInRange(-20, 20);
 			}
 
 			text.setText('$' + amount.toFixed(2));
@@ -109,10 +109,6 @@
 			}
 		}
 
-		socket.on('news', function (data) {
-			console.log(data);
-			socket.emit('my other event', { my: 'data' });
-		});
 		socket.on('lol', function (data) {
 			var key = Date.now();
 
